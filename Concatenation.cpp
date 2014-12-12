@@ -4,15 +4,19 @@ int main()
 {
     int a[20], b[30], r[50];
     int n, m, k = 0;
-    bool found;
 
     std::cout << "Nr. de elem. pt. multimea A: ";
     std::cin >> n;
 
-    for (int i = 0; i < n; ++i)
+    std::cout << "a[1] = ";
+    std::cin >> a[0];
+    for (int i = 1; i < n; ++i)
     {
-        std::cout << "a[" << i + 1 << "] = ";
-        std::cin >> a[i];
+        do
+        {
+            std::cout << "a[" << i + 1 << "] = ";
+            std::cin >> a[i];
+        } while (a[i] < a[i - 1]);
     }
 
     std::cout << "\n";
@@ -20,10 +24,15 @@ int main()
     std::cout << "Nr. de elem. pt. multimea B: ";
     std::cin >> m;
 
-    for (int i = 0; i < m; ++i)
+    std::cout << "b[1] = ";
+    std::cin >> b[0];
+    for (int i = 1; i < n; ++i)
     {
-        std::cout << "b[" << i + 1 << "] = ";
-        std::cin >> b[i];
+        do
+        {
+            std::cout << "b[" << i + 1 << "] = ";
+            std::cin >> b[i];
+        } while (b[i] < b[i - 1]);
     }
 
     std::cout << "\n";
