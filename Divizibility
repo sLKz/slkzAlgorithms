@@ -1,0 +1,26 @@
+#include <iostream>
+
+int main()
+{
+    int a[20], n;
+    int nrd = 0, d;
+
+    std::cout << "Nr. de elem.: ";
+    std::cin >> n;
+
+    std::cout << "d = ";
+    std::cin >> d;
+
+    for (int i = 0; i < n; ++i)
+    {
+        std::cout << "a[" << i + 1 << "] = ";
+        std::cin >> a[i];
+
+        if (a[i] % d == 0)
+        {
+            nrd++;
+        }
+    }
+
+    std::cout << "\nNr. elem. divizibile cu " << d << " este " << nrd;
+}
