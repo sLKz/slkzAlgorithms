@@ -4,7 +4,7 @@ int main()
 {
     int a[20], b[30], r[50];
     int n, m, k = 0;
-    bool found;
+    bool foundA, foundB;
 
     std::cout << "Nr. de elem. pt. multimea A: ";
     std::cin >> n;
@@ -32,19 +32,28 @@ int main()
     {
         for (int j = 0; j < m; ++j)
         {
-            found = false;
+            foundA = false;
+            foundB = false;
 
             for (int g = 0; g < k; ++g)
             {
-                if (a[i] == r[g] or b[j] == r[g])
+                if (a[i] == r[g])
                 {
-                    found = true;
+                    foundA = true;
+                }
+
+                if (b[j] == r[g])
+                {
+                    foundB = true;
                 }
             }
 
-            if (a[i] != b[j] and !found)
+            if (!foundA and a[i] != b[j])
             {
                 r[k++] = a[i];
+            }
+            if (!foundB and a[i] != b[j])
+            {
                 r[k++] = b[j];
             }
         }
