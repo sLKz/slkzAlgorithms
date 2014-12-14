@@ -1,0 +1,41 @@
+#include <iostream>
+
+int main()
+{
+    int v[30], n;
+    int a, b;
+    int nr = 0, sum = 0;
+
+    std::cout << "Nr. de elem.: ";
+    std::cin >> n;
+
+    do
+    {
+        std::cout << "a = ";
+        std::cin >> a;
+
+        std::cout << "b = ";
+        std::cin >> b;
+    } while (a >= b);
+
+    for (int i = 0; i < n; ++i)
+    {
+        std::cout << "v[" << i + 1 << "] = ";
+        std::cin >> v[i];
+
+        if (v[i] >= a and v[i] <= b)
+        {
+            nr++;
+            sum += v[i];
+        }
+    }
+
+    if (nr != 0)
+    {
+        std::cout << "Media aritmetica este: " << (double) sum / nr;
+    }
+    else
+    {
+        std::cout << "Nu sunt numere in intervalul dat.";
+    }
+}
