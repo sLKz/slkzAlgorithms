@@ -1,0 +1,15 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+  ofstream out("sumadiv.out");
+  
+  int n;
+  
+  cout << "Nr. este: ";
+  cin >> n;
+  
+  for (int i = 2
