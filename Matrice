@@ -1,0 +1,30 @@
+#include <iostream>
+
+int main()
+{
+    int a[20][20];
+    int n;
+    
+    int s = 0;
+    int nr = 0;
+    
+    std::cout << "n = ";
+    std::cin >> n;
+    
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = 0; j < n; ++j)
+        {
+            std::cout << "a[" << i << "][" << j << "] = ";
+            std::cin >> a[i][j];
+            
+            if (i + j == n - 1 and a[i][j] >= 0)
+            {
+                s += a[i][j];
+                nr++;
+            }
+        }
+    }
+    
+    std::cout << "\nMedia aritmetica a elementelor de pe diagonala secundara este " << (double)s / nr;
+}
