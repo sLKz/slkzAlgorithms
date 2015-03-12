@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main
+{
+int a[20][20],n,i,j,p=1;
+cout << "dimensiunea matricii";
+cin a;
+for(i=0;i<n;i++)
+{
+cout<< "a["<<(i+1)<<"]["<<(j+1)<<"]= ";
+cin >> a[i][j];
+}
+
+cout<<"matricea citica este: "<<endl;
+for(i=0;i<n;i++)
+    {
+	for(j=0;j<n;j++)
+	cout<<a[i][j];<< " ";
+	cout <<endl;
+    }
+for(i=1;i<n;i++)
+for(j=0;j<n;j++)
+p=p*a[i][j];
+cout <<"ultima cifra a produsul elementelor de sub diagonala pricipala este "<< p%10;
+return 0;
+}
