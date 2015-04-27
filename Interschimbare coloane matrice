@@ -1,0 +1,68 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int matrice[30][30], n, m;
+    int p, q;
+
+    cout << "n = ";
+    cin >> n;
+
+    cout << "m = ";
+    cin >> m;
+
+    for (size_t i = 0; i < n; i++)
+    {
+        for (size_t j = 0; j < m; j++)
+        {
+            cout << "matrice[" << i << "][" << j << "] = ";
+            cin >> matrice[i][j];
+        }
+    }
+
+    cout << "\n";
+
+    for (size_t i = 0; i < n; i++)
+    {
+        for (size_t j = 0; j < m; j++)
+        {
+            cout << matrice[i][j] << " ";
+        }
+
+        cout << "\n";
+    }
+
+    cout << "\n";
+
+    do
+    {
+        cout << "p = ";
+        cin >> p;
+
+        cout << "q = ";
+        cin >> q;
+    } while (p < 1 or q < 1 or p > m or q > m);
+
+    for (size_t i = 0; i < n; i++)
+    {
+        int aux = matrice[i][p - 1];
+        matrice[i][p - 1] = matrice[i][q - 1];
+        matrice[i][q - 1] = aux;
+    }
+
+    cout << "\n";
+
+    for (size_t i = 0; i < n; i++)
+    {
+        for (size_t j = 0; j < m; j++)
+        {
+            cout << matrice[i][j] << " ";
+        }
+
+        cout << "\n";
+    }
+
+    return 0;
+}
