@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int matrice[30][30], n;
+    
+    cout << "n = ";
+    cin >> n;
+    
+    for (size_t i = 0; i < n; i++)
+    {
+        for (size_t j = 0; j < n; j++)
+        {
+            cout << "matrice[" << i + 1 << "][" << j + 1 << "] = ";
+            cin >> matrice[i][j];
+        }
+    }
+    
+    cout << "\n";
+    
+    for (size_t i = 0; i < n; i++)
+    {
+        for (size_t j = 0; j < n; j++)
+        {
+            cout << matrice[i][j] << " ";
+        }
+        
+        cout << "\n";
+    }
+ 
+    for (size_t i = 0; i < n - 1; i++)
+    {
+        for (size_t j = i + 1; j < n; j++)
+        {
+            if (matrice[i][j] != matrice[j][i])
+            {
+                cout << "Matricea nu este simetrica fata de diagonala principala.";
+                return 0;
+            }
+        }
+    }
+    
+    cout << "Matricea este simetrica fata de diagonala principala.";
+    return 0;
+}
+
