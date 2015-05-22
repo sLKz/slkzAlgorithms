@@ -4,15 +4,19 @@ using namespace std;
 
 int main()
 {
-    int matrice[30][30], n;
-    int vector[900], k;
+    int matrice[30][30], n, m;
+    int vector[900], k = 0;
     
     cout << "n = ";
     cin >> n;
     
+    cout << "m = ";
+    cin >> m;
+    
+    // Citire
     for (size_t i = 0; i < n; i++)
     {
-        for (size_t j = 0; j < n; j++)
+        for (size_t j = 0; j < m; j++)
         {
             cout << "matrice[" << i + 1 << "][" << j + 1 << "] = ";
             cin >> matrice[i][j];
@@ -21,21 +25,22 @@ int main()
     
     cout << "\n";
     
+    // Afisare
     for (size_t i = 0; i < n; i++)
     {
-        for (size_t j = 0; j < n; j++)
+        for (size_t j = 0; j < m; j++)
         {
             cout << matrice[i][j] << " ";
         }
         
         cout << "\n";
     }
- 
-    for (size_t j = 0; j < n; j++)
+    
+    for (size_t j = 0; j < m; j++)
     {
         for (size_t i = 0; i < n; i++)
         {
-            vector[k++] = matrice[i][j];   
+            vector[k++] = matrice[i][j];
         }
     }
     
