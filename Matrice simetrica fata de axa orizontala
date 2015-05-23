@@ -36,12 +36,12 @@ int main()
         {
             if (matrice[i][j] != matrice[n - 1 - i][j])
             {
-                cout << "Matricea nu este simetrica fata de axa orizontala.";
+                cout << "\nMatricea nu este simetrica fata de axa orizontala.";
                 return 0;
             }
         }
     }
     
-    cout << "Matricea este simetrica fata de axa orizontala.";
+    cout << "\nMatricea este simetrica fata de axa orizontala.";
     return 0;
 }
