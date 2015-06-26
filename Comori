@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int n;
+    int directions[1000];
+    int instructions[1000];
+    
+    int x = 0, y = 0;
+    
+    FILE *in = fopen("comori.in", "r");
+    FILE *out = fopen("comori.out", "w");
+    
+    fscanf(in, "%d", &n);
+    
+    unsigned int index;
+    for (index = 0; index < n; ++index)
+    {
+        fscanf(in, "%d", &directions[index]);
+        fscanf(in, "%d", &instructions[index]);
+        
+        switch(directions[index])
+        {
+            case 1:
+                y += instructions[index];
+                break;
+                
+            case 2:
+                x += instructions[index];
+                y += instructions[index];
+                break;
+                
+            case 3:
+                x += instructions[index];
+                break;
+                
+            case 4:
+                x += instructions[index];
+                y -= instructions[index];
+                break;
+                
+            case 5:
+                y -= instructions[index];
+                break;
+                
+            case 6:
+                x -= instructions[index];
+                y -= instructions[index];
+                break;
+                
+            case 7:
+                x -= instructions[index];
+                break;
+                
+            case 8:
+                x -= instructions[index];
+                y += instructions[index];
+                break;
+        }
+    }
+    
+    fprintf(out, "(x, y) = (%d %d)\n", x, y);
+    
+    return 0;
+}
