@@ -1,0 +1,22 @@
+{struct fractie;
+{int x,y;};
+fractie f[10];
+int n,i,maxn,ok=0;
+cout<<"n=",cin>>n;
+for(i=0;i<n;i++)
+{cout <<"Numarul fractiei"<<i+1<<"este";
+cin>>f[i].x;
+cout<<"Numarul fractiei"<<i+1<<"este";
+cin>>f[i].y;}
+for(i=0;i<n;i++)
+cout<<f[i].x<<"/"f[i].y<<" ";
+cout<<endl;
+maxn=f[0].y;
+for(i=0;i<n;i++)
+if(maxn==f[i].y)
+maxn=f[i].y;
+for(i=0;i<n&&ok==0;i++)
+if (maxn==f[i].y)
+{ok=1;
+cout<<f[i].x<<"/"<<f[i].y;}
+return 0;}
